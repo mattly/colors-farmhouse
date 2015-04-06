@@ -1,0 +1,456 @@
+;; farmhouse (https://github.com/mattly/farmhouse-theme)
+;; Scheme: Matthew Lyon (https://github.com/mattly)
+
+;;; farmhouse-dark-theme.el
+
+;;; Code:
+
+(deftheme farmhouse)
+
+(let ((black     "#3d3430")
+      (brGreen   "#9acd10")
+      (brYellow  "#fcee85")
+      (brBlack   "#302b29")
+      (brBlue  "#277bdf")
+      (white "#b2a7a5")
+      (brMagenta "#bf4d87")
+      (brWhite "#e6e1e0")
+      (red "#90250b")
+      (brRed "#fd1c2a")
+      (yellow "#d0bc13")
+      (green "#467d14")
+      (cyan "#388975")
+      (blue "#1b4e95")
+      (purple "#6b254a")
+      (brCyan "#88e5cc"))
+
+  (custom-theme-set-faces 
+   'farmhouse
+
+   ;; Built-in stuff (Emacs 23)
+jjj   `(BORDER ((t (:background ,brBlack))))
+   `(border-glyph ((t (nil))))
+   `(cursor ((t (:background ,red))))
+   `(default ((t (:background ,brBlack :foreground ,white))))
+   `(fringe ((t (:background ,brBlack))))
+   `(gui-element ((t (:background ,brBlack :foreground ,brMagenta))))
+   `(highlight ((t (:background ,brGreen))))
+   `(hi-line ((t (:background ,black))))
+   `(link ((t (:foreground ,blue))))
+   `(link-visited ((t (:foreground ,purple))))
+   `(minibuffer-prompt ((t (:foreground ,brBlue))))
+   `(mode-line ((t (:background ,blue :foreground ,white :box nil))))
+   `(mode-line-buffer-id ((t (:foreground ,purple :background nil))))
+   `(mode-line-emphasis ((t (:foreground ,brMagenta :slant italic))))
+   `(mode-line-highlight ((t (:foreground ,purple :box nil :weight bold))))
+   `(mode-line-inactive ((t (:background ,black :foreground ,brBlack :box nil))))
+   `(region ((t (:background ,brYellow))))
+   `(secondary-selection ((t (:background ,brBlack))))
+   `(error ((t (:foreground ,brRed :weight bold))))
+   `(warning ((t (:foreground ,red :weight bold))))
+   `(success ((t (:foreground ,green :weight bold))))
+
+   `(header-line ((t (:inherit mode-line :foreground ,purple :background nil))))
+
+   ;; Font-lock stuff
+   ;; `(font-lock-builtin-face ((t (:foreground ,cyan))))
+   ;; `(font-lock-comment-delimiter-face ((t (:foreground ,white))))
+   ;; `(font-lock-comment-face ((t (:foreground ,white))))
+   ;; `(font-lock-constant-face ((t (:foreground ,brRed))))
+   ;; `(font-lock-doc-face ((t (:foreground ,brBlue))))
+   ;; `(font-lock-doc-string-face ((t (:foreground ,brBlack))))
+   ;; `(font-lock-function-name-face ((t (:foreground ,blue))))
+   ;; `(font-lock-keyword-face ((t (:foreground ,purple))))
+   ;; `(font-lock-negation-char-face ((t (:foreground ,green))))
+   ;; `(font-lock-preprocessor-face ((t (:foreground ,blue))))
+   ;; `(font-lock-regexp-grouping-backslash ((t (:foreground ,yellow))))
+   ;; `(font-lock-regexp-grouping-construct ((t (:foreground ,purple))))
+   ;; `(font-lock-string-face ((t (:foreground ,green))))
+   ;; `(font-lock-type-face ((t (:foreground ,yellow))))
+   ;; `(font-lock-variable-name-face ((t (:foreground ,cyan))))
+   ;; `(font-lock-warning-face ((t (:foreground ,red))))
+
+   ;; linum-mode
+   ;; `(linum ((t (:background ,brBlack :foreground ,white))))
+
+   ;; ;; Search
+   ;; `(match ((t (:foreground ,blue :background ,brGreen :inverse-video t))))
+   ;; `(isearch ((t (:foreground ,yellow :background ,brGreen :inverse-video t))))
+   ;; `(isearch-lazy-highlight-face ((t (:foreground ,cyan :background ,brGreen :inverse-video t))))
+   ;; `(isearch-fail ((t (:background ,brGreen :inherit font-lock-warning-face :inverse-video t))))
+
+   ;; ;; Flymake
+   ;; `(flymake-warnline ((t (:underline ,brRed :background ,brGreen))))
+   ;; `(flymake-errline ((t (:underline ,red :background ,brGreen))))
+
+   ;; ;; Clojure errors
+   ;; `(clojure-test-failure-face ((t (:background nil :inherit flymake-warnline))))
+   ;; `(clojure-test-error-face ((t (:background nil :inherit flymake-errline))))
+   ;; `(clojure-test-success-face ((t (:background nil :foreground nil :underline ,green))))
+
+   ;; ;; For Brian Carper's extended clojure syntax table
+   ;; `(clojure-keyword ((t (:foreground ,yellow))))
+   ;; `(clojure-parens ((t (:foreground ,brMagenta))))
+   ;; `(clojure-braces ((t (:foreground ,green))))
+   ;; `(clojure-brackets ((t (:foreground ,yellow))))
+   ;; `(clojure-double-quote ((t (:foreground ,cyan :background nil))))
+   ;; `(clojure-special ((t (:foreground ,blue))))
+   ;; `(clojure-java-call ((t (:foreground ,purple))))
+
+   ;; ;; MMM-mode
+   ;; `(mmm-code-submode-face ((t (:background ,brBlack))))
+   ;; `(mmm-comment-submode-face ((t (:inherit font-lock-comment-face))))
+   ;; `(mmm-output-submode-face ((t (:background ,brBlack))))
+
+   ;; ;; rainbow-delimiters
+   ;; `(rainbow-delimiters-depth-1-face ((t (:foreground ,purple))))
+   ;; `(rainbow-delimiters-depth-2-face ((t (:foreground ,blue))))
+   ;; `(rainbow-delimiters-depth-3-face ((t (:foreground ,cyan))))
+   ;; `(rainbow-delimiters-depth-4-face ((t (:foreground ,green))))
+   ;; `(rainbow-delimiters-depth-5-face ((t (:foreground ,yellow))))
+   ;; `(rainbow-delimiters-depth-6-face ((t (:foreground ,brRed))))
+   ;; `(rainbow-delimiters-depth-7-face ((t (:foreground ,red))))
+   ;; `(rainbow-delimiters-depth-8-face ((t (:foreground ,brBlack))))
+   ;; `(rainbow-delimiters-depth-9-face ((t (:foreground ,white))))
+
+   ;; ;; IDO
+   ;; `(ido-subdir ((t (:foreground ,brBlue))))
+   ;; `(ido-first-match ((t (:foreground ,brRed :weight bold))))
+   ;; `(ido-only-match ((t (:foreground ,red :weight bold))))
+   ;; `(ido-indicator ((t (:foreground ,red :background ,brGreen))))
+   ;; `(ido-virtual ((t (:foreground ,brBlue))))
+
+   ;; ;; which-function
+   ;; `(which-func ((t (:foreground ,blue :background nil :weight bold))))
+
+   ;; `(trailing-whitespace ((t (:background ,cyan :foreground ,yellow))))
+   ;; `(whitespace-empty ((t (:foreground ,red :background ,yellow))))
+   ;; `(whitespace-hspace ((t (:background ,brBlue :foreground ,brBlue))))
+   ;; `(whitespace-indentation ((t (:background ,yellow :foreground ,red))))
+   ;; `(whitespace-line ((t (:background ,brGreen :foreground ,brCyan))))
+   ;; `(whitespace-newline ((t (:foreground ,brBlue))))
+   ;; `(whitespace-space ((t (:background ,brGreen :foreground ,brBlue))))
+   ;; `(whitespace-space-after-tab ((t (:background ,yellow :foreground ,red))))
+   ;; `(whitespace-space-before-tab ((t (:background ,brRed :foreground ,red))))
+   ;; `(whitespace-tab ((t (:background ,brBlue :foreground ,brBlue))))
+   ;; `(whitespace-trailing ((t (:background ,red :foreground ,yellow))))
+
+   ;; ;; Parenthesis matching (built-in)
+   ;; `(show-paren-match ((t (:background ,blue :foreground ,brBlack))))
+   ;; `(show-paren-mismatch ((t (:background ,brRed :foreground ,brBlack))))
+
+   ;; ;; Parenthesis matching (mic-paren)
+   ;; `(paren-face-match ((t (:foreground nil :background nil :inherit show-paren-match))))
+   ;; `(paren-face-mismatch ((t (:foreground nil :background nil :inherit show-paren-mismatch))))
+   ;; `(paren-face-no-match ((t (:foreground nil :background nil :inherit show-paren-mismatch))))
+
+   ;; ;; Parenthesis dimming (parenface)
+   ;; `(paren-face ((t (:foreground ,brBlue :background nil))))
+
+   ;; `(sh-heredoc ((t (:foreground nil :inherit font-lock-string-face :weight normal))))
+   ;; `(sh-quoted-exec ((t (:foreground nil :inherit font-lock-preprocessor-face))))
+   ;; `(slime-highlight-edits-face ((t (:weight bold))))
+   ;; `(slime-repl-input-face ((t (:weight normal :underline nil))))
+   ;; `(slime-repl-prompt-face ((t (:underline nil :weight bold :foreground ,purple))))
+   ;; `(slime-repl-result-face ((t (:foreground ,green))))
+   ;; `(slime-repl-output-face ((t (:foreground ,blue :background ,brGreen))))
+
+   ;; `(csv-separator-face ((t (:foreground ,brRed))))
+
+   ;; `(diff-added ((t (:foreground ,green))))
+   ;; `(diff-changed ((t (:foreground ,yellow))))
+   ;; `(diff-removed ((t (:foreground ,red))))
+   ;; `(diff-header ((t (:background ,brGreen))))
+   ;; `(diff-file-header ((t (:background ,brYellow))))
+   ;; `(diff-hunk-header ((t (:background ,brGreen :foreground ,purple))))
+
+   ;; `(ediff-even-diff-A ((t (:foreground nil :background nil :inverse-video t))))
+   ;; `(ediff-even-diff-B ((t (:foreground nil :background nil :inverse-video t))))
+   ;; `(ediff-odd-diff-A  ((t (:foreground ,brBlue :background nil :inverse-video t))))
+   ;; `(ediff-odd-diff-B  ((t (:foreground ,brBlue :background nil :inverse-video t))))
+
+   ;; `(eldoc-highlight-function-argument ((t (:foreground ,green :weight bold))))
+
+   ;; ;; undo-tree
+   ;; `(undo-tree-visualizer-default-face ((t (:foreground ,brMagenta))))
+   ;; `(undo-tree-visualizer-current-face ((t (:foreground ,green :weight bold))))
+   ;; `(undo-tree-visualizer-active-branch-face ((t (:foreground ,red))))
+   ;; `(undo-tree-visualizer-register-face ((t (:foreground ,yellow))))
+
+   ;; ;; auctex
+   ;; `(font-latex-bold-face ((t (:foreground ,green))))
+   ;; `(font-latex-doctex-documentation-face ((t (:background ,brBlack))))
+   ;; `(font-latex-italic-face ((t (:foreground ,green))))
+   ;; `(font-latex-math-face ((t (:foreground ,brRed))))
+   ;; `(font-latex-sectioning-0-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-sectioning-1-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-sectioning-2-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-sectioning-3-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-sectioning-4-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-sectioning-5-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-sedate-face ((t (:foreground ,cyan))))
+   ;; `(font-latex-string-face ((t (:foreground ,yellow))))
+   ;; `(font-latex-verbatim-face ((t (:foreground ,brRed))))
+   ;; `(font-latex-warning-face ((t (:foreground ,red))))
+
+   ;; ;; dired+
+   ;; `(diredp-compressed-file-suffix ((t (:foreground ,blue))))
+   ;; `(diredp-dir-heading ((t (:foreground nil :background nil :inherit heading))))
+   ;; `(diredp-dir-priv ((t (:foreground ,cyan :background nil))))
+   ;; `(diredp-exec-priv ((t (:foreground ,blue :background nil))))
+   ;; `(diredp-executable-tag ((t (:foreground ,red :background nil))))
+   ;; `(diredp-file-name ((t (:foreground ,yellow))))
+   ;; `(diredp-file-suffix ((t (:foreground ,green))))
+   ;; `(diredp-flag-mark-line ((t (:background nil :inherit highlight))))
+   ;; `(diredp-ignored-file-name ((t (:foreground ,brBlue))))
+   ;; `(diredp-link-priv ((t (:background nil :foreground ,purple))))
+   ;; `(diredp-mode-line-flagged ((t (:foreground ,red))))
+   ;; `(diredp-mode-line-marked ((t (:foreground ,green))))
+   ;; `(diredp-no-priv ((t (:background nil))))
+   ;; `(diredp-number ((t (:foreground ,yellow))))
+   ;; `(diredp-other-priv ((t (:background nil :foreground ,purple))))
+   ;; `(diredp-rare-priv ((t (:foreground ,red :background nil))))
+   ;; `(diredp-read-priv ((t (:foreground ,green :background nil))))
+   ;; `(diredp-symlink ((t (:foreground ,purple))))
+   ;; `(diredp-write-priv ((t (:foreground ,yellow :background nil))))
+
+   ;; ;; term and ansi-term
+   ;; `(term-color-black ((t (:foreground ,brYellow :background ,black))))
+   ;; `(term-color-white ((t (:foreground ,white :background ,brWhite))))
+   ;; `(term-color-red ((t (:foreground ,red :background ,red))))
+   ;; `(term-color-yellow ((t (:foreground ,yellow :background ,yellow))))
+   ;; `(term-color-green ((t (:foreground ,green :background ,green))))
+   ;; `(term-color-cyan ((t (:foreground ,cyan :background ,cyan))))
+   ;; `(term-color-blue ((t (:foreground ,blue :background ,blue))))
+   ;; `(term-color-magenta ((t (:foreground ,purple :background ,purple))))
+
+   ;; ;; Magit (a patch is pending in magit to make these standard upstream)
+   ;; `(magit-branch ((t (:foreground ,green))))
+   ;; `(magit-header ((t (:inherit nil :weight bold))))
+   ;; `(magit-item-highlight ((t (:inherit highlight :background nil))))
+   ;; `(magit-log-graph ((t (:foreground ,brBlue))))
+   ;; `(magit-log-sha1 ((t (:foreground ,purple))))
+   ;; `(magit-log-head-label-bisect-bad ((t (:foreground ,red))))
+   ;; `(magit-log-head-label-bisect-good ((t (:foreground ,green))))
+   ;; `(magit-log-head-label-default ((t (:foreground ,yellow :box nil :weight bold))))
+   ;; `(magit-log-head-label-local ((t (:foreground ,blue))))
+   ;; `(magit-log-head-label-remote ((t (:foreground ,green))))
+   ;; `(magit-log-head-label-tags ((t (:foreground ,cyan :box nil :weight bold))))
+   ;; `(magit-section-title ((t (:inherit diff-hunk-header))))
+
+   ;; `(link ((t (:foreground nil :underline t))))
+   ;; `(widget-button ((t (:underline t))))
+   ;; `(widget-field ((t (:background ,brBlack :box (:line-width 1 :color ,brMagenta)))))
+
+   ;; ;; Compilation (most faces politely inherit from 'success, 'error, 'warning etc.)
+   ;; `(compilation-column-number ((t (:foreground ,yellow))))
+   ;; `(compilation-line-number ((t (:foreground ,yellow))))
+   ;; `(compilation-message-face ((t (:foreground ,blue))))
+   ;; `(compilation-mode-line-exit ((t (:foreground ,green))))
+   ;; `(compilation-mode-line-fail ((t (:foreground ,red))))
+   ;; `(compilation-mode-line-run ((t (:foreground ,blue))))
+
+   ;; ;; Grep
+   ;; `(grep-context-face ((t (:foreground ,brBlue))))
+   ;; `(grep-error-face ((t (:foreground ,red :weight bold :underline t))))
+   ;; `(grep-hit-face ((t (:foreground ,blue))))
+   ;; `(grep-match-face ((t (:foreground nil :background nil :inherit match))))
+
+   ;; `(regex-tool-matched-face ((t (:foreground nil :background nil :inherit match))))
+
+   ;; ;; mark-multiple
+   ;; `(mm/master-face ((t (:inherit region :foreground nil :background nil))))
+   ;; `(mm/mirror-face ((t (:inherit region :foreground nil :background nil))))
+
+   ;; ;; org-mode
+   ;; `(org-agenda-structure ((t (:foreground ,purple))))
+   ;; `(org-agenda-date ((t (:foreground ,blue :underline nil))))
+   ;; `(org-agenda-done ((t (:foreground ,green))))
+   ;; `(org-agenda-dimmed-todo-face ((t (:foreground ,brBlue))))
+   ;; `(org-block ((t (:foreground ,brRed))))
+   ;; `(org-code ((t (:foreground ,yellow))))
+   ;; `(org-column ((t (:background ,brBlack))))
+   ;; `(org-column-title ((t (:inherit org-column :weight bold :underline t))))
+   ;; `(org-date ((t (:foreground ,purple :underline t))))
+   ;; `(org-document-info ((t (:foreground ,cyan))))
+   ;; `(org-document-info-keyword ((t (:foreground ,green))))
+   ;; `(org-document-title ((t (:weight bold :foreground ,brRed :height 1.44))))
+   ;; `(org-done ((t (:foreground ,green))))
+   ;; `(org-ellipsis ((t (:foreground ,brBlue))))
+   ;; `(org-footnote ((t (:foreground ,cyan))))
+   ;; `(org-formula ((t (:foreground ,red))))
+   ;; `(org-hide ((t (:foreground ,brBlack))))
+   ;; `(org-link ((t (:foreground ,blue))))
+   ;; `(org-scheduled ((t (:foreground ,green))))
+   ;; `(org-scheduled-previously ((t (:foreground ,brRed))))
+   ;; `(org-scheduled-today ((t (:foreground ,green))))
+   ;; `(org-special-keyword ((t (:foreground ,brRed))))
+   ;; `(org-table ((t (:foreground ,purple))))
+   ;; `(org-todo ((t (:foreground ,red))))
+   ;; `(org-upcoming-deadline ((t (:foreground ,brRed))))
+   ;; `(org-warning ((t (:weight bold :foreground ,red))))
+
+   ;; `(markdown-url-face ((t (:inherit link))))
+   ;; `(markdown-link-face ((t (:foreground ,blue :underline t))))
+
+   ;; `(hl-sexp-face ((t (:background ,brBlack))))
+   ;; `(highlight-80+ ((t (:background ,brBlack))))
+
+   ;; ;; Python-specific overrides
+   ;; `(py-builtins-face ((t (:foreground ,brRed :weight normal))))
+
+   ;; ;; js2-mode
+   ;; `(js2-warning-face ((t (:underline ,brRed))))
+   ;; `(js2-error-face ((t (:foreground nil :underline ,red))))
+   ;; `(js2-external-variable-face ((t (:foreground ,purple))))
+   ;; `(js2-function-param-face ((t (:foreground ,blue))))
+   ;; `(js2-instance-member-face ((t (:foreground ,blue))))
+   ;; `(js2-private-function-call-face ((t (:foreground ,red))))
+
+   ;; ;; js3-mode
+   ;; `(js3-warning-face ((t (:underline ,brRed))))
+   ;; `(js3-error-face ((t (:foreground nil :underline ,red))))
+   ;; `(js3-external-variable-face ((t (:foreground ,purple))))
+   ;; `(js3-function-param-face ((t (:foreground ,blue))))
+   ;; `(js3-jsdoc-tag-face ((t (:foreground ,brRed))))
+   ;; `(js3-jsdoc-type-face ((t (:foreground ,cyan))))
+   ;; `(js3-jsdoc-value-face ((t (:foreground ,yellow))))
+   ;; `(js3-jsdoc-html-tag-name-face ((t (:foreground ,blue))))
+   ;; `(js3-jsdoc-html-tag-delimiter-face ((t (:foreground ,green))))
+   ;; `(js3-instance-member-face ((t (:foreground ,blue))))
+   ;; `(js3-private-function-call-face ((t (:foreground ,red))))
+
+   ;; ;; nxml
+   ;; `(nxml-name-face ((t (:foreground unspecified :inherit font-lock-constant-face))))
+   ;; `(nxml-attribute-local-name-face ((t (:foreground unspecified :inherit font-lock-variable-name-face))))
+   ;; `(nxml-ref-face ((t (:foreground unspecified :inherit font-lock-preprocessor-face))))
+   ;; `(nxml-delimiter-face ((t (:foreground unspecified :inherit font-lock-keyword-face))))
+   ;; `(nxml-delimited-data-face ((t (:foreground unspecified :inherit font-lock-string-face))))
+   ;; `(rng-error-face ((t (:underline ,red))))
+
+   ;; ;; RHTML
+   ;; `(erb-delim-face ((t (:background ,brBlack))))
+   ;; `(erb-exec-face ((t (:background ,brBlack :weight bold))))
+   ;; `(erb-exec-delim-face ((t (:background ,brBlack))))
+   ;; `(erb-out-face ((t (:background ,brBlack :weight bold))))
+   ;; `(erb-out-delim-face ((t (:background ,brBlack))))
+   ;; `(erb-comment-face ((t (:background ,brBlack :weight bold :slant italic))))
+   ;; `(erb-comment-delim-face ((t (:background ,brBlack))))
+
+   ;; ;; Message-mode
+   ;; `(message-header-other ((t (:foreground nil :background nil :weight normal))))
+   ;; `(message-header-subject ((t (:inherit message-header-other :weight bold :foreground ,yellow))))
+   ;; `(message-header-to ((t (:inherit message-header-other :weight bold :foreground ,brRed))))
+   ;; `(message-header-cc ((t (:inherit message-header-to :foreground nil))))
+   ;; `(message-header-name ((t (:foreground ,blue :background nil))))
+   ;; `(message-header-newsgroups ((t (:foreground ,cyan :background nil :slant normal))))
+   ;; `(message-separator ((t (:foreground ,purple))))
+
+   ;; ;; Jabber
+   ;; `(jabber-chat-prompt-local ((t (:foreground ,yellow))))
+   ;; `(jabber-chat-prompt-foreign ((t (:foreground ,brRed))))
+   ;; `(jabber-chat-prompt-system ((t (:foreground ,yellow :weight bold))))
+   ;; `(jabber-chat-text-local ((t (:foreground ,yellow))))
+   ;; `(jabber-chat-text-foreign ((t (:foreground ,brRed))))
+   ;; `(jabber-chat-text-error ((t (:foreground ,red))))
+
+   ;; `(jabber-roster-user-online ((t (:foreground ,green))))
+   ;; `(jabber-roster-user-xa ((t :foreground ,brBlue)))
+   ;; `(jabber-roster-user-dnd ((t :foreground ,yellow)))
+   ;; `(jabber-roster-user-away ((t (:foreground ,brRed))))
+   ;; `(jabber-roster-user-chatty ((t (:foreground ,purple))))
+   ;; `(jabber-roster-user-error ((t (:foreground ,red))))
+   ;; `(jabber-roster-user-offline ((t (:foreground ,brBlue))))
+
+   ;; `(jabber-rare-time-face ((t (:foreground ,brBlue))))
+   ;; `(jabber-activity-face ((t (:foreground ,purple))))
+   ;; `(jabber-activity-personal-face ((t (:foreground ,cyan))))
+
+   ;; ;; Gnus
+   ;; `(gnus-cite-1 ((t (:inherit outline-1 :foreground nil))))
+   ;; `(gnus-cite-2 ((t (:inherit outline-2 :foreground nil))))
+   ;; `(gnus-cite-3 ((t (:inherit outline-3 :foreground nil))))
+   ;; `(gnus-cite-4 ((t (:inherit outline-4 :foreground nil))))
+   ;; `(gnus-cite-5 ((t (:inherit outline-5 :foreground nil))))
+   ;; `(gnus-cite-6 ((t (:inherit outline-6 :foreground nil))))
+   ;; `(gnus-cite-7 ((t (:inherit outline-7 :foreground nil))))
+   ;; `(gnus-cite-8 ((t (:inherit outline-8 :foreground nil))))
+   ;; ;; there are several more -cite- faces...
+   ;; `(gnus-header-content ((t (:inherit message-header-other))))
+   ;; `(gnus-header-subject ((t (:inherit message-header-subject))))
+   ;; `(gnus-header-from ((t (:inherit message-header-other-face :weight bold :foreground ,brRed))))
+   ;; `(gnus-header-name ((t (:inherit message-header-name))))
+   ;; `(gnus-button ((t (:inherit link :foreground nil))))
+   ;; `(gnus-signature ((t (:inherit font-lock-comment-face))))
+
+   ;; `(gnus-summary-normal-unread ((t (:foreground ,blue :weight normal))))
+   ;; `(gnus-summary-normal-read ((t (:foreground ,brMagenta :weight normal))))
+   ;; `(gnus-summary-normal-ancient ((t (:foreground ,cyan :weight normal))))
+   ;; `(gnus-summary-normal-ticked ((t (:foreground ,brRed :weight normal))))
+   ;; `(gnus-summary-low-unread ((t (:foreground ,brBlue :weight normal))))
+   ;; `(gnus-summary-low-read ((t (:foreground ,brBlue :weight normal))))
+   ;; `(gnus-summary-low-ancient ((t (:foreground ,brBlue :weight normal))))
+   ;; `(gnus-summary-high-unread ((t (:foreground ,yellow :weight normal))))
+   ;; `(gnus-summary-high-read ((t (:foreground ,green :weight normal))))
+   ;; `(gnus-summary-high-ancient ((t (:foreground ,green :weight normal))))
+   ;; `(gnus-summary-high-ticked ((t (:foreground ,brRed :weight normal))))
+   ;; `(gnus-summary-cancelled ((t (:foreground ,red :background nil :weight normal))))
+
+   ;; `(gnus-group-mail-low ((t (:foreground ,brBlue))))
+   ;; `(gnus-group-mail-low-empty ((t (:foreground ,brBlue))))
+   ;; `(gnus-group-mail-1 ((t (:foreground nil :weight normal :inherit outline-1))))
+   ;; `(gnus-group-mail-2 ((t (:foreground nil :weight normal :inherit outline-2))))
+   ;; `(gnus-group-mail-3 ((t (:foreground nil :weight normal :inherit outline-3))))
+   ;; `(gnus-group-mail-4 ((t (:foreground nil :weight normal :inherit outline-4))))
+   ;; `(gnus-group-mail-5 ((t (:foreground nil :weight normal :inherit outline-5))))
+   ;; `(gnus-group-mail-6 ((t (:foreground nil :weight normal :inherit outline-6))))
+   ;; `(gnus-group-mail-1-empty ((t (:inherit gnus-group-mail-1 :foreground ,brBlue))))
+   ;; `(gnus-group-mail-2-empty ((t (:inherit gnus-group-mail-2 :foreground ,brBlue))))
+   ;; `(gnus-group-mail-3-empty ((t (:inherit gnus-group-mail-3 :foreground ,brBlue))))
+   ;; `(gnus-group-mail-4-empty ((t (:inherit gnus-group-mail-4 :foreground ,brBlue))))
+   ;; `(gnus-group-mail-5-empty ((t (:inherit gnus-group-mail-5 :foreground ,brBlue))))
+   ;; `(gnus-group-mail-6-empty ((t (:inherit gnus-group-mail-6 :foreground ,brBlue))))
+   ;; `(gnus-group-news-1 ((t (:foreground nil :weight normal :inherit outline-5))))
+   ;; `(gnus-group-news-2 ((t (:foreground nil :weight normal :inherit outline-6))))
+   ;; `(gnus-group-news-3 ((t (:foreground nil :weight normal :inherit outline-7))))
+   ;; `(gnus-group-news-4 ((t (:foreground nil :weight normal :inherit outline-8))))
+   ;; `(gnus-group-news-5 ((t (:foreground nil :weight normal :inherit outline-1))))
+   ;; `(gnus-group-news-6 ((t (:foreground nil :weight normal :inherit outline-2))))
+   ;; `(gnus-group-news-1-empty ((t (:inherit gnus-group-news-1 :foreground ,brBlue))))
+   ;; `(gnus-group-news-2-empty ((t (:inherit gnus-group-news-2 :foreground ,brBlue))))
+   ;; `(gnus-group-news-3-empty ((t (:inherit gnus-group-news-3 :foreground ,brBlue))))
+   ;; `(gnus-group-news-4-empty ((t (:inherit gnus-group-news-4 :foreground ,brBlue))))
+   ;; `(gnus-group-news-5-empty ((t (:inherit gnus-group-news-5 :foreground ,brBlue))))
+   ;; `(gnus-group-news-6-empty ((t (:inherit gnus-group-news-6 :foreground ,brBlue))))
+
+   ;; `(erc-direct-msg-face ((t (:foreground ,brRed))))
+   ;; `(erc-error-face ((t (:foreground ,red))))
+   ;; `(erc-header-face ((t (:foreground ,brMagenta :background ,brBlue))))
+   ;; `(erc-input-face ((t (:foreground ,green))))
+   ;; `(erc-keyword-face ((t (:foreground ,yellow))))
+   ;; `(erc-current-nick-face ((t (:foreground ,green))))
+   ;; `(erc-my-nick-face ((t (:foreground ,green))))
+   ;; `(erc-nick-default-face ((t (:weight normal :foreground ,purple))))
+   ;; `(erc-nick-msg-face ((t (:weight normal :foreground ,yellow))))
+   ;; `(erc-notice-face ((t (:foreground ,brBlue))))
+   ;; `(erc-pal-face ((t (:foreground ,brRed))))
+   ;; `(erc-prompt-face ((t (:foreground ,blue))))
+   ;; `(erc-timestamp-face ((t (:foreground ,cyan))))
+
+   ;; `(custom-variable-tag ((t (:foreground ,blue))))
+   ;; `(custom-group-tag ((t (:foreground ,blue))))
+   ;; `(custom-state ((t (:foreground ,green)))))
+
+  (custom-theme-set-variables
+   'farmhouse
+
+   `(ansi-color-names-vector
+     ;; black, red, green, yellow, blue, magenta, cyan, white
+     [,black ,red ,green ,yellow ,blue ,purple ,blue ,white])
+   `(ansi-term-color-vector
+     ;; black, red, green, yellow, blue, magenta, cyan, white
+     [unspecified ,black ,red ,green ,yellow ,blue ,purple ,blue ,white]))))
+
+(provide-theme 'farmhouse)
+
+;;; farmhouse-dark-theme.el ends here

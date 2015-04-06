@@ -1,0 +1,194 @@
+<DOCTYPE html>
+    <html>
+        <head>
+            <style>
+             :root {
+                 --grayA: hsl(355, 20%, 96%);
+                 --grayB: hsl( 15, 15%, 92%);
+                 --grayC: hsl( 30, 10%, 86%);
+                 --grayD: hsl( 45,  5%, 74%);
+                 --grayE: hsl( 50,  3%, 60%);
+                 --grayF: hsl(180,  3%, 50%);
+                 --grayG: hsl(190,  5%, 40%);
+                 --grayH: hsl(205, 10%, 32%);
+                 --grayI: hsl(220, 15%, 18%);
+                 --grayJ: hsl(240, 16%, 14%);
+
+                 --brRed: hsl(353, 100%, 47%);
+                 --mdRed: hsl(354, 100%, 39%);
+                 --dkRed: hsl(355, 100%, 31%);
+                 --brYel: hsl( 42,  95%, 48%);
+                 --mdYel: hsl( 37,  92%, 43%);
+                 --dkYel: hsl( 33,  89%, 38%);
+
+                 --brGrn: hsl( 79,  85%, 42%);
+                 --mdGrn: hsl( 86,  84%, 36%);
+                 --dkGrn: hsl( 91,  83%, 30%);
+                 --brCya: hsl(148,  76%, 50%);
+                 --mdCya: hsl(150,  66%, 45%);
+                 --dkCya: hsl(153,  56%, 40%);
+
+                 --brBlu: hsl(208,  97%, 51%);
+                 --mdBlu: hsl(215,  90%, 48%);
+                 --dkBlu: hsl(222,  84%, 45%);
+                 --brMag: hsl(330,  53%, 57%);
+                 --mdMag: hsl(329,  53%, 45%);
+                 --dkMag: hsl(328,  76%, 33%);
+             }
+             .gray-a {fill: var(--grayA); color: var(--grayA);}
+             .gray-b {fill: var(--grayB); color: var(--grayB);}
+             .gray-c {fill: var(--grayC); color: var(--grayC);}
+             .gray-d {fill: var(--grayD); color: var(--grayD);}
+             .gray-e {fill: var(--grayE); color: var(--grayE);}
+             .gray-f {fill: var(--grayF); color: var(--grayF);}
+             .gray-g {fill: var(--grayG); color: var(--grayG);}
+             .gray-h {fill: var(--grayH); color: var(--grayH);}
+             .gray-i {fill: var(--grayI); color: var(--grayI);}
+             .gray-j {fill: var(--grayJ); color: var(--grayJ);}
+
+             .bg-b { background-color: var(--grayB); }
+             .bg-i { background-color: var(--grayI); }
+             .bg-test { padding: 20px; margin: 20px 0; }
+             .bg-test p {
+                 display: inline-block;
+                 margin: 0 10px 0 0;
+                 font-family: InputMono, sans-serif;
+             }
+
+             .br-red { fill: var(--brRed); color: var(--brRed); }
+             .md-red { fill: var(--mdRed); color: var(--mdRed); }
+             .dk-red { fill: var(--dkRed); color: var(--dkRed); }
+             .br-mag { fill: var(--brMag); color: var(--brMag); }
+             .md-mag { fill: var(--mdMag); color: var(--mdMag); }
+             .dk-mag { fill: var(--dkMag); color: var(--dkMag); }
+             .br-blu { fill: var(--brBlu); color: var(--brBlu); }
+             .md-blu { fill: var(--mdBlu); color: var(--mdBlu); }
+             .dk-blu { fill: var(--dkBlu); color: var(--dkBlu); }
+             .br-grn { fill: var(--brGrn); color: var(--brGrn); }
+             .md-grn { fill: var(--mdGrn); color: var(--mdGrn); }
+             .dk-grn { fill: var(--dkGrn); color: var(--dkGrn); }
+             .br-yel { fill: var(--brYel); color: var(--brYel); }
+             .md-yel { fill: var(--mdYel); color: var(--mdYel); }
+             .dk-yel { fill: var(--dkYel); color: var(--dkYel); }
+             .br-cya { fill: var(--brCya); color: var(--brCya); }
+             .md-cya { fill: var(--mdCya); color: var(--mdCya); }
+             .dk-cya { fill: var(--dkCya); color: var(--dkCya); }
+            </style>
+        </head>
+        <body>
+            <svg width="450" height="500">
+                <defs>
+                    <linearGradient id="gray" x1="0%" x2="0%" y1="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:hsl(0,0%,100%)" />
+                        <stop offset="100%" style="stop-color:hsl(0,0%,0%)" />
+                    </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="500" height="500" fill="url(#gray)" />
+                <g transform="translate(25,25)">
+                <rect x="0" y="0" width="400" height="50" class="gray-a" />
+                <rect x="0" y="50" width="400" height="100" class="gray-b" />
+
+                <rect x="0" y="150" width="50" height="50" class="gray-c" />
+                <rect x="50" y="150" width="50" height="50" class="gray-d" />
+                <rect x="0" y="200" width="50" height="50" class="gray-e" />
+                <rect x="50" y="200" width="50" height="50" class="gray-f" />
+                <rect x="0" y="250" width="50" height="50" class="gray-g" />
+                <rect x="50" y="250" width="50" height="50" class="gray-h" />
+
+                <rect x="0" y="300" width="400" height="100" class="gray-i" />
+                <rect x="0" y="400" width="400" height="50" class="gray-j" />
+
+                <rect x="100" y="150" width="50" height="50" class="br-red" />
+                <rect x="100" y="200" width="50" height="50" class="md-red" />
+                <rect x="100" y="250" width="50" height="50" class="dk-red" />
+
+                <rect x="150" y="150" width="50" height="50" class="br-yel" />
+                <rect x="150" y="200" width="50" height="50" class="md-yel" />
+                <rect x="150" y="250" width="50" height="50" class="dk-yel" />
+
+                <rect x="200" y="150" width="50" height="50" class="br-grn" />
+                <rect x="200" y="200" width="50" height="50" class="md-grn" />
+                <rect x="200" y="250" width="50" height="50" class="dk-grn" />
+
+                <rect x="250" y="150" width="50" height="50" class="br-cya" />
+                <rect x="250" y="200" width="50" height="50" class="md-cya" />
+                <rect x="250" y="250" width="50" height="50" class="dk-cya" />
+
+                <rect x="300" y="150" width="50" height="50" class="br-blu" />
+                <rect x="300" y="200" width="50" height="50" class="md-blu" />
+                <rect x="300" y="250" width="50" height="50" class="dk-blu" />
+
+                <rect x="350" y="150" width="50" height="50" class="br-mag" />
+                <rect x="350" y="200" width="50" height="50" class="md-mag" />
+                <rect x="350" y="250" width="50" height="50" class="dk-mag" />
+                </g>
+            </svg>
+
+            <div class="bg-b bg-test">
+                <p class="gray-a">gray a</p>
+                <p class="gray-b">gray b</p>
+                <p class="gray-c">gray c</p>
+                <p class="gray-d">gray d</p>
+                <p class="gray-e">gray e</p>
+                <p class="gray-f">gray f</p>
+                <p class="gray-g">gray g</p>
+                <p class="gray-h">gray h</p>
+                <p class="gray-i">gray i</p>
+                <p class="gray-j">gray j</p>
+
+                <p class="br-red">br red</p>
+                <p class="md-red">md red</p>
+                <p class="dk-red">dk red</p>
+                <p class="br-yel">br yel</p>
+                <p class="md-yel">md yel</p>
+                <p class="dk-yel">dk yel</p>
+
+                <p class="br-grn">br grn</p>
+                <p class="md-grn">md grn</p>
+                <p class="dk-grn">dk grn</p>
+                <p class="br-cya">br cya</p>
+                <p class="md-cya">md cya</p>
+                <p class="dk-cya">dk cya</p>
+
+                <p class="br-blu">br blu</p>
+                <p class="md-blu">md blu</p>
+                <p class="dk-blu">dk blu</p>
+                <p class="br-mag">br mag</p>
+                <p class="md-mag">md mag</p>
+                <p class="dk-mag">dk mag</p>
+            </div>
+            <div class="bg-i bg-test">
+                <p class="gray-a">gray a</p>
+                <p class="gray-b">gray b</p>
+                <p class="gray-c">gray c</p>
+                <p class="gray-d">gray d</p>
+                <p class="gray-e">gray e</p>
+                <p class="gray-f">gray f</p>
+                <p class="gray-g">gray g</p>
+                <p class="gray-h">gray h</p>
+                <p class="gray-i">gray i</p>
+                <p class="gray-j">gray j</p>
+
+                <p class="br-red">br red</p>
+                <p class="md-red">md red</p>
+                <p class="dk-red">dk red</p>
+                <p class="br-yel">br yel</p>
+                <p class="md-yel">md yel</p>
+                <p class="dk-yel">dk yel</p>
+
+                <p class="br-grn">br grn</p>
+                <p class="md-grn">md grn</p>
+                <p class="dk-grn">dk grn</p>
+                <p class="br-cya">br cya</p>
+                <p class="md-cya">md cya</p>
+                <p class="dk-cya">dk cya</p>
+
+                <p class="br-blu">br blu</p>
+                <p class="md-blu">md blu</p>
+                <p class="dk-blu">dk blu</p>
+                <p class="br-mag">br mag</p>
+                <p class="md-mag">md mag</p>
+                <p class="dk-mag">dk mag</p>
+            </div>
+        </body>
+    </html>
